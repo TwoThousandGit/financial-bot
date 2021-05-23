@@ -6,6 +6,9 @@ from aiogram import types
 
 from states import Quotes
 
+import yfinance as yf
+from datetime import datetime,date
+
 portfolioname = []
 tiker = []
 date = []
@@ -36,6 +39,12 @@ async def answer_stock_ticker(message: types.Message, state: FSMContext):
     temp = message.text
     await state.update_data(stock_ticker=temp)
     tiker.append(temp)
+
+    # current_date = datetime.now().date()       - СПОСОБ, КАК ВЫТАСКИВАТЬ СТОИМОСТЬ АКЦИИ
+    # x = str(current_date)
+    # data = yf.download(temp, '2021-05-23')
+    # await message.answer(data['Adj Close'])
+
     # data = await state.get_data()
     # portfolio_name = data.get("portfolio_name")
     # stock_ticker = message.text

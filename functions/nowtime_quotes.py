@@ -21,15 +21,18 @@ import arrow
 def nowtime_quotes(tiker: str):
     current_date = datetime.now().date()
     x = str(current_date)
-    data = yf.download(tiker, x)
+    data = yf.download(tiker, '2021-05-23')
     return(data['Adj Close'])
 
-#количество рабочих дней
-def work_days_between(d1, d2):
-    work_days = np.busday_count(d1, d2)
-    return (work_days)
 
-print (work_days_between('2021-05-01','2021-05-18'))
-def profit()
+print(nowtime_quotes('AAPL'))
+
+#количество рабочих дней
+# def work_days_between(d1, d2):
+#     work_days = np.busday_count(d1, d2)
+#     return (work_days)
+#
+# print (work_days_between('2021-05-01','2021-05-18'))
+# def profit()
 
 

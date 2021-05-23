@@ -10,20 +10,20 @@ async def show_menu(message: types.Message):
     await message.answer("Выберите нужную команду ниже", reply_markup=menu)
 
 
-@dp.message_handler(text="Добавить ценные бумаги по тикерам")
+@dp.message_handler(text="Работа с инвестиционным портфелем")
 async def get_tiker(message: types.Message):
-    await message.answer("Добавлять ценные бумаги тут")
+    await message.answer("Для добавления ценных бумаг нажмите сюда -/addingPortfolio")
+    await message.answer("Для просмотра доходности, нажмите сюда - ")
 
 
-@dp.message_handler(text="Посмотреть статистику за день")
+
+@dp.message_handler(text="Работа с котировками")
 async def get_dailystat(message: types.Message):
-    await message.answer("Статистика за день тут")
+    await message.answer("Чтобы узнать текущую стоимость, нажмите сюда -  /present_value")
+    await message.answer("Чтобы посотреть график изменений, нажмите сюда -  ")
 
-@dp.message_handler(text="осмотреть статистику за месяц")
+@dp.message_handler(text="Скрыть клавиатуру")
 async def get_mounthstat(message: types.Message):
-    await message.answer("Статистика за месяц тут",reply_markup=ReplyKeyboardRemove())
+    await message.answer("Для того чтобы открыть меню заново, нажмите сюда - /menu",reply_markup=ReplyKeyboardRemove())
 
-@dp.message_handler(text="осмотреть статистику за год")
-async def get_mounthstat(message: types.Message):
-    await message.answer("Статистика за год тут")
 
