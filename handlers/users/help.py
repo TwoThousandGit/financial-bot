@@ -1,6 +1,7 @@
 from aiogram import types
 from aiogram.dispatcher.filters.builtin import CommandHelp
 
+from handlers.users.AddingQuotes import portfolioname
 from loader import dp
 from utils.misc import rate_limit
 
@@ -14,3 +15,4 @@ async def bot_help(message: types.Message):
         '/help - Получить справку'
     ]
     await message.answer('\n'.join(text))
+    await message.answer(f"списки : {portfolioname}")
